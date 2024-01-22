@@ -1,41 +1,11 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-void main() => runApp( MaterialApp(
-  home: Scaffold(
-    appBar: AppBar(
-        title: Text"My First App",
-        centerTitle: true
-        backgroundColor:Colors.red[600],
-    ),
-    body:  Center(
-     child: Text(
-      'Hello ninjas!',
-       style: TextStyle(
-           fontSize: 20.0,
-               fontWeight: FontWeight.bold,
-           letterSpacing: 2.0,
-           color: Color.red[600]
-       ),
-
-),
-
-),
-    floatingActionButton: FloatingActionButton(
-        onPressed: (){
-
-        },
-      child: const Text('click'),
-        backgroundColor: Colors.amberAccent,
-    ) ,
-)
-
+void main() => runApp( const MaterialApp(
+  home: Home(),
 ));
-home: Home(),
-
 
 class Home extends StatelessWidget {
-  const test({super.key});
+  const Home({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -46,27 +16,29 @@ class Home extends StatelessWidget {
         backgroundColor:Colors.red[600],
       ),
       body:  Center(
-        child: Text(
-          'Hello ninjas!',
-          style: TextStyle(
-              fontSize: 20.0,
-              fontWeight: FontWeight.bold,
-              letterSpacing: 2.0,
-              color: Color.red[600]
-          ),
-
-        ),
-
+        child: const RaisedButton.icon(
+          onPressed: () {},
+          icon: Icon(
+          Icons.mail_lock
+    ),
+    label:Text("mail me"),
+color: Colors.lightBlue,
       ),
-      floatingActionButton: FloatingActionButton(
+
+        foatingActionButton: FloatingActionButton(
         onPressed: (){
 
         },
-        child: const Text('click'),
+        child: widget(child: const Text('click')),
         backgroundColor: Colors.amberAccent,
       ) ,
     );
   }
+}
+
+
+
+widget({required Text child}) {
 }
 
 
